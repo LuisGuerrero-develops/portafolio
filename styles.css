@@ -1,0 +1,501 @@
+:root {
+    --dark-bg: #1A1A2E;
+    --primary-color: #E94560; 
+    --secondary-color: #A742F7;
+    --text-color: #F8F8F8;
+    --card-bg: #272740;
+}
+
+/* Estilos Globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Reglas de Centrado y Títulos */
+.section-padding {
+    padding: 80px 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.section-title {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 50px;
+    /* Degradado de texto */
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Header y Navegación */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: var(--dark-bg);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s, padding 0.3s;
+}
+
+.navbar a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--primary-color);
+}
+
+#language-toggle {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+/* HERO SECTION */
+.hero-section {
+    text-align: center;
+    padding: 100px 5% 50px;
+}
+
+.hero-title {
+    font-size: 4em;
+    margin-bottom: 10px;
+}
+
+.highlight {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+.profile-photo-container {
+    width: 200px;
+    height: 200px;
+    margin: 30px auto;
+    border-radius: 50%;
+    /* Añadir efecto de resplandor (glow) */
+    box-shadow: 0 0 20px var(--secondary-color), 0 0 40px var(--primary-color);
+    overflow: hidden;
+    padding: 5px;
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Estilos de Botones */
+.contact-btn, .project-btn, .cert-link {
+    display: inline-block;
+    padding: 12px 25px;
+    margin-top: 20px;
+    text-decoration: none;
+    color: var(--text-color);
+    background: var(--card-bg);
+    border: 2px solid;
+    border-image: linear-gradient(90deg, var(--primary-color), var(--secondary-color)) 1;
+    border-image-slice: 1;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.contact-btn:hover, .project-btn:hover, .cert-link:hover {
+    /* Aquí cambié el hover a un tono sutil para el fondo en lugar de solo el color secundario */
+    background-color: rgba(167, 66, 247, 0.1); 
+}
+
+/* SOBRE MÍ */
+.about-content {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.about-content p {
+    text-align: justify;
+}
+
+/* GRIDS Y HABILIDADES */
+.skills-grid, .projects-grid, .certificates-grid {
+    display: grid;
+    gap: 30px; /* Aumenté el gap para mejor separación */
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.skill-subtitle {
+    text-align: center;
+    margin-top: 40px;
+    color: var(--primary-color);
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+/* Habilidades Técnicas (5 columnas) */
+.tech-skills {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    margin-bottom: 40px;
+}
+
+/* Habilidades Blandas (2 columnas) */
+.soft-skills {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.skill-card {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: transform 0.3s, border 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border: 2px solid var(--secondary-color);
+}
+
+.skill-icon {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* Proyectos (2 columnas) */
+.projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(167, 66, 247, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.project-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.project-card .technologies {
+    margin-top: 15px;
+    font-style: italic;
+    color: #aaa;
+}
+
+
+/* --- CERTIFICADOS --- */
+.certificates-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Añadí más gap para un mejor aspecto con 6 tarjetas */
+    gap: 30px; 
+}
+
+.certificate-card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    /* Usaremos el borde secundario para los certificados */
+    border: 1px solid rgba(167, 66, 247, 0.3); 
+    transition: box-shadow 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.certificate-card:hover {
+    /* Efecto de resaltado al pasar el ratón */
+    box-shadow: 0 0 15px var(--secondary-color); 
+    transform: translateY(-5px);
+}
+
+.cert-icon {
+    /* Icono con color primario para contraste */
+    color: var(--primary-color); 
+    margin-bottom: 15px;
+}
+
+.certificate-card h3 {
+    margin-bottom: 10px;
+    color: var(--text-color);
+    font-size: 1.3em;
+}
+
+.certificate-card p {
+    color: #ccc;
+    font-size: 0.9em;
+    min-height: 50px; /* Mantener la altura uniforme de las tarjetas */
+}
+
+.cert-link {
+    margin-top: 15px;
+    font-size: 0.9em;
+    padding: 8px 15px;
+    /* Quitar el margen de arriba ya que el botón tiene margin-top: 20px */
+    margin-top: 20px; 
+}
+
+
+/* CONTACTO */
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.contact-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+.contact-link i {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.contact-link:hover i {
+    color: var(--secondary-color);
+}
+
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px 5%; 
+    background-color: #121221;
+    font-size: 0.9em;
+}
+
+/* Contenedor Flex para alinear texto en el centro y logos a la derecha */
+.footer-content {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    max-width: 1200px; 
+    margin: 0 auto;
+    position: relative;
+}
+
+.copyright-text {
+    flex-grow: 1;
+    text-align: center;
+}
+
+
+.social-icons {
+    position: absolute; 
+    right: 0;
+    display: flex;
+    align-items: center;
+}
+
+.social-icons a {
+    color: var(--text-color);
+    margin-left: 15px; 
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--secondary-color); 
+}
+
+/* MEDIA QUERY para responsividad en el Footer */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; 
+        justify-content: center;
+        text-align: center;
+        gap: 10px;
+        position: static;
+    }
+
+    .social-icons {
+        position: static;
+        margin-top: 10px;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+/* --- ESTILOS PARA ANIMACIONES DE ENTRADA (SCROLL-REVEAL) --- */
+
+/* Clase Base: Elementos ocultos (aplicada por JS a las secciones) */
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(5px);
+    transition: all 0.8s ease-out;
+}
+
+/* Clase de Activación: Elementos visibles (posición normal) */
+.show {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+}
+
+
+/* --- ESTILOS PARA EL MODAL (VENTANA EMERGENTE) --- */
+
+/* Contenedor principal (fondo oscuro transparente) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.95); /* Fondo más oscuro para resaltar la imagen */
+    padding-top: 60px;
+    animation: fadeIn 0.3s;
+}
+
+/* Contenido del Modal (La imagen) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 90%; /* Ajustado para mejor visualización en general */
+    max-width: 1100px; /* Incrementado para mejor vista de certificados */
+    /* Removí el padding y background ya que solo contiene la imagen */
+}
+
+#modalCertImage {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    /* Sutil borde de color */
+    border: 2px solid var(--secondary-color); 
+}
+
+/* El botón de cierre */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: var(--text-color);
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+
+
+/* MEDIA QUERIES para responsividad */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .navbar {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center;
+    }
+
+    .navbar a {
+        margin: 5px 10px;
+    }
+
+    .hero-title {
+        font-size: 2.5em;
+    }
+    
+
+    .skills-grid, .projects-grid, .certificates-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-links {
+        gap: 20px;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+    
+    .certificate-card p {
+        /* Reducir el min-height en móvil para ahorrar espacio si es necesario */
+        min-height: auto; 
+    }
+}
+
+
+.header.scrolled {
+    padding: 10px 5%;
+    background-color: #121221; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+.hero-section.scrolled .profile-photo-container,
+.hero-section.scrolled .hero-subtitle,
+.hero-section.scrolled .contact-btn {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    margin-top: 0;
+    padding: 0;
+    transition: all 0.5s ease-out;
+}
+
+
+.hero-section {
+    transition: padding 0.3s;
+}
