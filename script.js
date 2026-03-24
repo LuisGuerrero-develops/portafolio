@@ -52,9 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ----------------------------------------------------
-    // 3. Lógica del MODAL para Certificados
-    // ----------------------------------------------------
+    //  Lógica del MODAL para Certificados
+  
 
     const modal = document.getElementById('certModal');
     const modalImage = document.getElementById('modalCertImage');
@@ -82,9 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ----------------------------------------------------
-    // 4. Lógica del HEADER DINÁMICO (Nueva funcionalidad)
-    // ----------------------------------------------------
 
     const header = document.querySelector('.header');
     const heroSection = document.getElementById('inicio');
